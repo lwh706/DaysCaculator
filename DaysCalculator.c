@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
 
 void main (void){
     int year_1, year_2, month_1, month_2, day_1, day_2;
@@ -78,27 +77,32 @@ void main (void){
             trig_1 = 0;
         }
     }
-    // calculate
+    // caculate days
     int i, result = 0; 
     if(year_2 - year_1 == 0){
         for(i = (month_1 - 1); i < month_2; i++){
-            if(i == (month_1 - 1)){
-                if((year_1%4 == 0 && year_1%100 != 0) || year_1%400 == 0){
-                    result += leapyear_month[i] - day_1;
-                }
-                else{
-                    result += normalyear_month[i] - day_1;
-                }
-            }
-            else if(i == (month_2 - 1)){
-                result += day_2;
+            if(month_1 == month_2){
+                result += day_2 - day_1;
             }
             else{
-                if((year_1%4 == 0 && year_1%100 != 0) || year_1%400 == 0){
-                    result += leapyear_month[i];
+                if(i == (month_1 - 1)){
+                    if((year_1%4 == 0 && year_1%100 != 0) || year_1%400 == 0){
+                        result += leapyear_month[i] - day_1;
+                    }
+                    else{
+                        result += normalyear_month[i] - day_1;
+                    }
+                }
+                else if(i == (month_2 - 1)){
+                    result += day_2;
                 }
                 else{
-                    result += normalyear_month[i];
+                    if((year_1%4 == 0 && year_1%100 != 0) || year_1%400 == 0){
+                        result += leapyear_month[i];
+                    }
+                    else{
+                        result += normalyear_month[i];
+                    }
                 }
             }
         }
