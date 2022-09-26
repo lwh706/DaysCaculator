@@ -138,7 +138,6 @@ void main (void){
 
     }
     else{
-        printf("Cross year\n");
         for(i = (month_1 - 1); i < 12; i++){
             if(i == (month_1 - 1)){
                 if((year_1%4 == 0 && year_1%100 != 0) || year_1%400 == 0){
