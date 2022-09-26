@@ -78,7 +78,7 @@ void main (void){
             trig_1 = 0;
         }
     }
-    // caculate days
+    // calculate days
     int i, result = 0; 
     if(year_2 - year_1 == 0){
         for(i = (month_1 - 1); i < month_2; i++){
