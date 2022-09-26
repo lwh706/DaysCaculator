@@ -1,2 +1,2 @@
 # DaysCaculator
-Caculat passing days
+Caculate the passing days
